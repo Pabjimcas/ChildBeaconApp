@@ -1,0 +1,495 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		46C4DA064D09D6A50A9ED5CD /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCD192423CB4AB97AC2538D0 /* Pods.framework */; };
+		B5BB3B5C1C9A2B3A007A7195 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3B5B1C9A2B3A007A7195 /* AppDelegate.swift */; };
+		B5BB3B631C9A2B3A007A7195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5BB3B621C9A2B3A007A7195 /* Assets.xcassets */; };
+		B5BB3B661C9A2B3A007A7195 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5BB3B641C9A2B3A007A7195 /* LaunchScreen.storyboard */; };
+		B5BB3B8A1C9A4448007A7195 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5BB3B861C9A4448007A7195 /* Main.storyboard */; };
+		B5BB3B8C1C9A4448007A7195 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3B881C9A4448007A7195 /* MainViewController.swift */; };
+		B5BB3B8D1C9A4448007A7195 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3B891C9A4448007A7195 /* MenuViewController.swift */; };
+		B5BB3B921C9A4468007A7195 /* BeaconRastreatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3B8E1C9A4468007A7195 /* BeaconRastreatorTableViewCell.swift */; };
+		B5BB3B931C9A4468007A7195 /* ListBeaconsRastreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3B8F1C9A4468007A7195 /* ListBeaconsRastreatorViewController.swift */; };
+		B5BB3B941C9A4468007A7195 /* MapBeaconsRastreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3B901C9A4468007A7195 /* MapBeaconsRastreatorViewController.swift */; };
+		B5BB3B951C9A4468007A7195 /* Rastreator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5BB3B911C9A4468007A7195 /* Rastreator.storyboard */; };
+		B5BB3B9A1C9A4510007A7195 /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3B961C9A4510007A7195 /* AddGroupViewController.swift */; };
+		B5BB3B9B1C9A4510007A7195 /* BeaconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3B971C9A4510007A7195 /* BeaconTableViewCell.swift */; };
+		B5BB3B9C1C9A4510007A7195 /* GroupsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5BB3B981C9A4510007A7195 /* GroupsStoryboard.storyboard */; };
+		B5BB3B9D1C9A4510007A7195 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3B991C9A4510007A7195 /* GroupViewController.swift */; };
+		B5BB3B9F1C9A4534007A7195 /* MainGroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3B9E1C9A4534007A7195 /* MainGroupsTableViewCell.swift */; };
+		B5BB3BA41C9A456B007A7195 /* DataHelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3BA01C9A456B007A7195 /* DataHelperProtocol.swift */; };
+		B5BB3BA51C9A456B007A7195 /* BeaconDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3BA11C9A456B007A7195 /* BeaconDataHelper.swift */; };
+		B5BB3BA61C9A456B007A7195 /* NotificationsDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3BA21C9A456B007A7195 /* NotificationsDataHelper.swift */; };
+		B5BB3BA71C9A456B007A7195 /* SQLiteDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3BA31C9A456B007A7195 /* SQLiteDataStore.swift */; };
+		B5BB3BAB1C9A4652007A7195 /* Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3BA91C9A4652007A7195 /* Beacon.swift */; };
+		B5BB3BAC1C9A4652007A7195 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3BAA1C9A4652007A7195 /* Notification.swift */; };
+		B5BB3BAE1C9A4CC0007A7195 /* BeaconGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3BAD1C9A4CC0007A7195 /* BeaconGroup.swift */; };
+		B5BB3BB21C9A4DB8007A7195 /* BeaconGroupDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3BB11C9A4DB8007A7195 /* BeaconGroupDataHelper.swift */; };
+		B5BB3BB61C9A5553007A7195 /* AddBeaconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3BB51C9A5553007A7195 /* AddBeaconViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0A2DFE6A2D0EA7E5678AEE8F /* Pods_ChildBeaconProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChildBeaconProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4753ED80FC4991F7143A1A26 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B502D6031CA28C880066EA6C /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = "../../../../Library/Developer/Xcode/DerivedData/ChildBeaconProject-bcjqhbhjllufjqgulrkkdydwnxvg/Build/Products/Debug-iphonesimulator/SQLite.framework"; sourceTree = "<group>"; };
+		B5BB3B581C9A2B3A007A7195 /* ChildBeaconProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChildBeaconProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5BB3B5B1C9A2B3A007A7195 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B5BB3B621C9A2B3A007A7195 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B5BB3B651C9A2B3A007A7195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B5BB3B671C9A2B3A007A7195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5BB3B861C9A4448007A7195 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Main/Main.storyboard; sourceTree = "<group>"; };
+		B5BB3B881C9A4448007A7195 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = Main/MainViewController.swift; sourceTree = "<group>"; };
+		B5BB3B891C9A4448007A7195 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = Main/MenuViewController.swift; sourceTree = "<group>"; };
+		B5BB3B8E1C9A4468007A7195 /* BeaconRastreatorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeaconRastreatorTableViewCell.swift; path = Rastreator/BeaconRastreatorTableViewCell.swift; sourceTree = "<group>"; };
+		B5BB3B8F1C9A4468007A7195 /* ListBeaconsRastreatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListBeaconsRastreatorViewController.swift; path = Rastreator/ListBeaconsRastreatorViewController.swift; sourceTree = "<group>"; };
+		B5BB3B901C9A4468007A7195 /* MapBeaconsRastreatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapBeaconsRastreatorViewController.swift; path = Rastreator/MapBeaconsRastreatorViewController.swift; sourceTree = "<group>"; };
+		B5BB3B911C9A4468007A7195 /* Rastreator.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Rastreator.storyboard; path = Rastreator/Rastreator.storyboard; sourceTree = "<group>"; };
+		B5BB3B961C9A4510007A7195 /* AddGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddGroupViewController.swift; path = Groups/AddGroupViewController.swift; sourceTree = "<group>"; };
+		B5BB3B971C9A4510007A7195 /* BeaconTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeaconTableViewCell.swift; path = Groups/BeaconTableViewCell.swift; sourceTree = "<group>"; };
+		B5BB3B981C9A4510007A7195 /* GroupsStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = GroupsStoryboard.storyboard; path = Groups/GroupsStoryboard.storyboard; sourceTree = "<group>"; };
+		B5BB3B991C9A4510007A7195 /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupViewController.swift; path = Groups/GroupViewController.swift; sourceTree = "<group>"; };
+		B5BB3B9E1C9A4534007A7195 /* MainGroupsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainGroupsTableViewCell.swift; path = Groups/MainGroupsTableViewCell.swift; sourceTree = "<group>"; };
+		B5BB3BA01C9A456B007A7195 /* DataHelperProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataHelperProtocol.swift; path = BD/DataHelperProtocol.swift; sourceTree = "<group>"; };
+		B5BB3BA11C9A456B007A7195 /* BeaconDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeaconDataHelper.swift; path = BD/BeaconDataHelper.swift; sourceTree = "<group>"; };
+		B5BB3BA21C9A456B007A7195 /* NotificationsDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationsDataHelper.swift; path = BD/NotificationsDataHelper.swift; sourceTree = "<group>"; };
+		B5BB3BA31C9A456B007A7195 /* SQLiteDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SQLiteDataStore.swift; path = BD/SQLiteDataStore.swift; sourceTree = "<group>"; };
+		B5BB3BA91C9A4652007A7195 /* Beacon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Beacon.swift; path = Models/Beacon.swift; sourceTree = "<group>"; };
+		B5BB3BAA1C9A4652007A7195 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Notification.swift; path = Models/Notification.swift; sourceTree = "<group>"; };
+		B5BB3BAD1C9A4CC0007A7195 /* BeaconGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeaconGroup.swift; path = Models/BeaconGroup.swift; sourceTree = "<group>"; };
+		B5BB3BB11C9A4DB8007A7195 /* BeaconGroupDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeaconGroupDataHelper.swift; path = BD/BeaconGroupDataHelper.swift; sourceTree = "<group>"; };
+		B5BB3BB51C9A5553007A7195 /* AddBeaconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddBeaconViewController.swift; path = Groups/AddBeaconViewController.swift; sourceTree = "<group>"; };
+		B5D1F48D1CA2953E000120E3 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = "../../../../Library/Developer/Xcode/DerivedData/ChildBeaconProject-bcjqhbhjllufjqgulrkkdydwnxvg/Build/Products/Debug-iphoneos/SQLite.framework"; sourceTree = "<group>"; };
+		BCD192423CB4AB97AC2538D0 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFDC25CA60EEF9337E863B12 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B5BB3B551C9A2B3A007A7195 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46C4DA064D09D6A50A9ED5CD /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		906A60B9E203D1798D30D0C5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4753ED80FC4991F7143A1A26 /* Pods.debug.xcconfig */,
+				EFDC25CA60EEF9337E863B12 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B5BB3B4F1C9A2B3A007A7195 = {
+			isa = PBXGroup;
+			children = (
+				B5BB3B5A1C9A2B3A007A7195 /* ChildBeaconProject */,
+				B5BB3B591C9A2B3A007A7195 /* Products */,
+				906A60B9E203D1798D30D0C5 /* Pods */,
+				E2D2EC569624807B1A24597A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B5BB3B591C9A2B3A007A7195 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B5BB3B581C9A2B3A007A7195 /* ChildBeaconProject.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B5BB3B5A1C9A2B3A007A7195 /* ChildBeaconProject */ = {
+			isa = PBXGroup;
+			children = (
+				B5BB3BA81C9A4619007A7195 /* Models */,
+				B5BB3B851C9A43A3007A7195 /* BD */,
+				B5BB3B5B1C9A2B3A007A7195 /* AppDelegate.swift */,
+				B5BB3B821C9A42EC007A7195 /* Main */,
+				B5BB3B7D1C9A4273007A7195 /* Rastreator */,
+				B5BB3B621C9A2B3A007A7195 /* Assets.xcassets */,
+				B5BB3B641C9A2B3A007A7195 /* LaunchScreen.storyboard */,
+				B5BB3B671C9A2B3A007A7195 /* Info.plist */,
+				B5BB3B7C1C9A4254007A7195 /* Groups */,
+			);
+			path = ChildBeaconProject;
+			sourceTree = "<group>";
+		};
+		B5BB3B7C1C9A4254007A7195 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				B5BB3B9E1C9A4534007A7195 /* MainGroupsTableViewCell.swift */,
+				B5BB3B961C9A4510007A7195 /* AddGroupViewController.swift */,
+				B5BB3B971C9A4510007A7195 /* BeaconTableViewCell.swift */,
+				B5BB3B981C9A4510007A7195 /* GroupsStoryboard.storyboard */,
+				B5BB3B991C9A4510007A7195 /* GroupViewController.swift */,
+				B5BB3BB51C9A5553007A7195 /* AddBeaconViewController.swift */,
+			);
+			name = Groups;
+			sourceTree = "<group>";
+		};
+		B5BB3B7D1C9A4273007A7195 /* Rastreator */ = {
+			isa = PBXGroup;
+			children = (
+				B5BB3B8E1C9A4468007A7195 /* BeaconRastreatorTableViewCell.swift */,
+				B5BB3B8F1C9A4468007A7195 /* ListBeaconsRastreatorViewController.swift */,
+				B5BB3B901C9A4468007A7195 /* MapBeaconsRastreatorViewController.swift */,
+				B5BB3B911C9A4468007A7195 /* Rastreator.storyboard */,
+			);
+			name = Rastreator;
+			sourceTree = "<group>";
+		};
+		B5BB3B821C9A42EC007A7195 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B5BB3B861C9A4448007A7195 /* Main.storyboard */,
+				B5BB3B881C9A4448007A7195 /* MainViewController.swift */,
+				B5BB3B891C9A4448007A7195 /* MenuViewController.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		B5BB3B851C9A43A3007A7195 /* BD */ = {
+			isa = PBXGroup;
+			children = (
+				B5BB3BB11C9A4DB8007A7195 /* BeaconGroupDataHelper.swift */,
+				B5BB3BA01C9A456B007A7195 /* DataHelperProtocol.swift */,
+				B5BB3BA11C9A456B007A7195 /* BeaconDataHelper.swift */,
+				B5BB3BA21C9A456B007A7195 /* NotificationsDataHelper.swift */,
+				B5BB3BA31C9A456B007A7195 /* SQLiteDataStore.swift */,
+			);
+			name = BD;
+			sourceTree = "<group>";
+		};
+		B5BB3BA81C9A4619007A7195 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B5BB3BAD1C9A4CC0007A7195 /* BeaconGroup.swift */,
+				B5BB3BA91C9A4652007A7195 /* Beacon.swift */,
+				B5BB3BAA1C9A4652007A7195 /* Notification.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E2D2EC569624807B1A24597A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5D1F48D1CA2953E000120E3 /* SQLite.framework */,
+				B502D6031CA28C880066EA6C /* SQLite.framework */,
+				BCD192423CB4AB97AC2538D0 /* Pods.framework */,
+				0A2DFE6A2D0EA7E5678AEE8F /* Pods_ChildBeaconProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B5BB3B571C9A2B3A007A7195 /* ChildBeaconProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5BB3B6A1C9A2B3A007A7195 /* Build configuration list for PBXNativeTarget "ChildBeaconProject" */;
+			buildPhases = (
+				854F23F40ED37F36D2383FA4 /* Check Pods Manifest.lock */,
+				B5BB3B541C9A2B3A007A7195 /* Sources */,
+				B5BB3B551C9A2B3A007A7195 /* Frameworks */,
+				B5BB3B561C9A2B3A007A7195 /* Resources */,
+				7478C2DFE1A127CDD7BFFF7E /* Embed Pods Frameworks */,
+				992114BA5EE2D9FAF73E0BB0 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChildBeaconProject;
+			productName = ChildBeaconProject;
+			productReference = B5BB3B581C9A2B3A007A7195 /* ChildBeaconProject.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B5BB3B501C9A2B3A007A7195 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "mikel balduciel diaz";
+				TargetAttributes = {
+					B5BB3B571C9A2B3A007A7195 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = A5UCFNWB8C;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = B5BB3B531C9A2B3A007A7195 /* Build configuration list for PBXProject "ChildBeaconProject" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B5BB3B4F1C9A2B3A007A7195;
+			productRefGroup = B5BB3B591C9A2B3A007A7195 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B5BB3B571C9A2B3A007A7195 /* ChildBeaconProject */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B5BB3B561C9A2B3A007A7195 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5BB3B661C9A2B3A007A7195 /* LaunchScreen.storyboard in Resources */,
+				B5BB3B631C9A2B3A007A7195 /* Assets.xcassets in Resources */,
+				B5BB3B9C1C9A4510007A7195 /* GroupsStoryboard.storyboard in Resources */,
+				B5BB3B8A1C9A4448007A7195 /* Main.storyboard in Resources */,
+				B5BB3B951C9A4468007A7195 /* Rastreator.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7478C2DFE1A127CDD7BFFF7E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		854F23F40ED37F36D2383FA4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		992114BA5EE2D9FAF73E0BB0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B5BB3B541C9A2B3A007A7195 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5BB3BA51C9A456B007A7195 /* BeaconDataHelper.swift in Sources */,
+				B5BB3B9F1C9A4534007A7195 /* MainGroupsTableViewCell.swift in Sources */,
+				B5BB3BAB1C9A4652007A7195 /* Beacon.swift in Sources */,
+				B5BB3BB61C9A5553007A7195 /* AddBeaconViewController.swift in Sources */,
+				B5BB3B941C9A4468007A7195 /* MapBeaconsRastreatorViewController.swift in Sources */,
+				B5BB3BAC1C9A4652007A7195 /* Notification.swift in Sources */,
+				B5BB3B8C1C9A4448007A7195 /* MainViewController.swift in Sources */,
+				B5BB3B9A1C9A4510007A7195 /* AddGroupViewController.swift in Sources */,
+				B5BB3BA61C9A456B007A7195 /* NotificationsDataHelper.swift in Sources */,
+				B5BB3BA41C9A456B007A7195 /* DataHelperProtocol.swift in Sources */,
+				B5BB3B9D1C9A4510007A7195 /* GroupViewController.swift in Sources */,
+				B5BB3BAE1C9A4CC0007A7195 /* BeaconGroup.swift in Sources */,
+				B5BB3B931C9A4468007A7195 /* ListBeaconsRastreatorViewController.swift in Sources */,
+				B5BB3B8D1C9A4448007A7195 /* MenuViewController.swift in Sources */,
+				B5BB3BB21C9A4DB8007A7195 /* BeaconGroupDataHelper.swift in Sources */,
+				B5BB3B9B1C9A4510007A7195 /* BeaconTableViewCell.swift in Sources */,
+				B5BB3BA71C9A456B007A7195 /* SQLiteDataStore.swift in Sources */,
+				B5BB3B5C1C9A2B3A007A7195 /* AppDelegate.swift in Sources */,
+				B5BB3B921C9A4468007A7195 /* BeaconRastreatorTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B5BB3B641C9A2B3A007A7195 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5BB3B651C9A2B3A007A7195 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B5BB3B681C9A2B3A007A7195 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B5BB3B691C9A2B3A007A7195 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B5BB3B6B1C9A2B3A007A7195 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4753ED80FC4991F7143A1A26 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = ChildBeaconProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = es.upsa.mimo.ChildBeacons.ChildBeaconProject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7 armv7s";
+			};
+			name = Debug;
+		};
+		B5BB3B6C1C9A2B3A007A7195 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFDC25CA60EEF9337E863B12 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = ChildBeaconProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = es.upsa.mimo.ChildBeacons.ChildBeaconProject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7 armv7s";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B5BB3B531C9A2B3A007A7195 /* Build configuration list for PBXProject "ChildBeaconProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5BB3B681C9A2B3A007A7195 /* Debug */,
+				B5BB3B691C9A2B3A007A7195 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5BB3B6A1C9A2B3A007A7195 /* Build configuration list for PBXNativeTarget "ChildBeaconProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5BB3B6B1C9A2B3A007A7195 /* Debug */,
+				B5BB3B6C1C9A2B3A007A7195 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B5BB3B501C9A2B3A007A7195 /* Project object */;
+}
