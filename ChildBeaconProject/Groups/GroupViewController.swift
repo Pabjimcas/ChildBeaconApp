@@ -15,9 +15,13 @@ class GroupViewController: UIViewController,UITableViewDataSource,UITableViewDel
     var datoSeleccionado : Beacon?
     var buttonRow = 0
 
+    @IBOutlet weak var deleteGroupBt: UIButton!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        if beaconsBD.count == 0 {
+            deleteGroupBt.enabled = true
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -51,11 +55,28 @@ class GroupViewController: UIViewController,UITableViewDataSource,UITableViewDel
         cell.nameBeaconLabel.text = beaconsBD[row].name
         cell.editBt.tag = row
         cell.editBt.addTarget(self, action: "buttonClicked:", forControlEvents: UIControlEvents.TouchUpInside)
+        cell.deleteBt.tag = row
+        cell.deleteBt.addTarget(self, action: "deleteBeacon:", forControlEvents: UIControlEvents.TouchUpInside)
         return cell
     }
     func buttonClicked (sender:UIButton){
         buttonRow = sender.tag
         self.performSegueWithIdentifier("modalUpdateBeaconSegue", sender: self)
+    }
+    func deleteBeacon (sender:UIButton){
+        buttonRow = sender.tag
+        if beaconsBD.count == 1 {
+            deleteGroupBt.enabled = true
+        }
+       do{
+            
+            try Beacon.deleteBeacon(beaconsBD[buttonRow].beaconId)
+            beaconsBD.removeAtIndex(buttonRow)
+            print("beacon borrado")
+            tableView.reloadData()
+        }catch {
+            
+        }
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.datoSeleccionado = beaconsBD[indexPath.row]
@@ -93,6 +114,18 @@ class GroupViewController: UIViewController,UITableViewDataSource,UITableViewDel
         }
     }
     
+    @IBAction func deleteGroupAction(sender: UIButton) {
+        let beaconGroup = BeaconGroup()
+        beaconGroup.beaconGroupId = self.group
+        do{
+          try BeaconGroupDataHelper.delete(beaconGroup)
+            print("grupo borrado")
+            navigationController?.popToRootViewControllerAnimated(true)
+        }catch {
+            
+        }
+        
+    }
 
 
 }

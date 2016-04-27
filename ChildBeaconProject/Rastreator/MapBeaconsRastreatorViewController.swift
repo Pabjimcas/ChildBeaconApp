@@ -7,29 +7,75 @@
 //
 
 import UIKit
+import Foundation
+import MapKit
 
-class MapBeaconsRastreatorViewController: UIViewController {
-
+class MapBeaconsRastreatorViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDelegate  {
+    @IBOutlet weak var mapView: MKMapView!
+    var locationManager : CLLocationManager!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        locationManager = CLLocationManager()
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.delegate = self
+        // var location = CLLocation(latitude: 40.95 as CLLocationDegrees, longitude: -5.68 as CLLocationDegrees)
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    let regionRadius: CLLocationDistance = 50
+    func centerMapOnLocation(location: CLLocation) {
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
+                                                                  regionRadius * 2.0, regionRadius * 2.0)
+        mapView.setRegion(coordinateRegion, animated: true)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func addRadiusCircle(location: CLLocation){
+        self.mapView.delegate = self
+        var circle = MKCircle(centerCoordinate: location.coordinate, radius: 50 as CLLocationDistance)
+        self.mapView.addOverlay(circle)
     }
-    */
+    
+    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
+        if overlay is MKCircle {
+            var circle = MKCircleRenderer(overlay: overlay)
+            circle.strokeColor = UIColor.redColor()
+            circle.fillColor = UIColor(red: 255, green: 0, blue: 0, alpha: 0.1)
+            circle.lineWidth = 1
+            return circle
+        } else {
+            return nil
+        }
+    }
+    //MARK - Location Manager
+    
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        
+        if (NSProcessInfo.processInfo().environment["SIMULATOR_DEVICE_NAME"] != nil){
+            print("Usando simulador")
+            
+        }
+        else{
+            
+            switch status{
+                
+            case .AuthorizedWhenInUse:
+                
+                //let center = CLLocationCoordinate2D(latitude: manager.location!.coordinate.latitude, longitude: manager.location!.coordinate.longitude)
+                //let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+                var location = CLLocation(latitude: manager.location!.coordinate.latitude as CLLocationDegrees, longitude: manager.location!.coordinate.longitude as CLLocationDegrees)
+                //mapView.setRegion(region, animated: true)
+                centerMapOnLocation(location)
+                addRadiusCircle(location)
+                manager.startUpdatingLocation()
+                
+                break;
+            default:
+                print("Other location permission: \(status)")
+                break
+            }
+            
+            
+        }
+    }
 
 }

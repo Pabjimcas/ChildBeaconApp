@@ -115,11 +115,11 @@
 				B5BB3B851C9A43A3007A7195 /* BD */,
 				B5BB3B5B1C9A2B3A007A7195 /* AppDelegate.swift */,
 				B5BB3B821C9A42EC007A7195 /* Main */,
+				B5BB3B7C1C9A4254007A7195 /* Groups */,
 				B5BB3B7D1C9A4273007A7195 /* Rastreator */,
 				B5BB3B621C9A2B3A007A7195 /* Assets.xcassets */,
 				B5BB3B641C9A2B3A007A7195 /* LaunchScreen.storyboard */,
 				B5BB3B671C9A2B3A007A7195 /* Info.plist */,
-				B5BB3B7C1C9A4254007A7195 /* Groups */,
 			);
 			path = ChildBeaconProject;
 			sourceTree = "<group>";

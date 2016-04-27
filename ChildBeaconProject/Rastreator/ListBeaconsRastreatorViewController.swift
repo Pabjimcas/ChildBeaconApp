@@ -13,11 +13,18 @@ class ListBeaconsRastreatorViewController: UIViewController,CLLocationManagerDel
     let locationManager = CLLocationManager()
     var beaconGroup :BeaconGroup?
     var beaconsArray = [Beacon]()
+    var mostrar = true
+    let alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: UIAlertControllerStyle.Alert)
+    
     var group : Int64!
     /*let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")!, identifier: "RadBeacon Mikel")*/
     var region : CLBeaconRegion!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let accion = UIAlertAction(title: "Cerrar", style: UIAlertActionStyle.Default) { _ in self.alert.dismissViewControllerAnimated(true, completion: {
+            self.mostrar = true
+        })}
+        alert.addAction(accion)
         
     }
     
@@ -36,11 +43,13 @@ class ListBeaconsRastreatorViewController: UIViewController,CLLocationManagerDel
     }
     func initLocation(){
         locationManager.delegate=self
+        
         if CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedWhenInUse {
             locationManager.requestWhenInUseAuthorization()
             
         }
         locationManager.allowsBackgroundLocationUpdates = true
+        
         locationManager.startRangingBeaconsInRegion(region)
 
     }
@@ -51,6 +60,7 @@ class ListBeaconsRastreatorViewController: UIViewController,CLLocationManagerDel
                 
                 let minor = closestBeacon.minor.stringValue
                 let major = closestBeacon.major.stringValue
+
                 do {
                     let beaconBD = try BeaconDataHelper.find((beaconGroup?.beaconGroupId)!, minorValue: minor, majorValue:major)
                     
@@ -61,12 +71,18 @@ class ListBeaconsRastreatorViewController: UIViewController,CLLocationManagerDel
                                 beaconsArray[index] = item
                                 var codigo = -1 //Código para identificar el tipo de notificación
                                 if closestBeacon.accuracy > 1{
-                                    //presentViewController(alertaSeAleja, animated: true, completion: nil)
+                                    print("\(mostrar)")
+                                    if (mostrar){
+                                        presentViewController(alert, animated: true, completion: nil)
+                                        mostrar = false
+                                    }
+                                    
                                     codigo = 0
                                   let id = guardarNotificacion(item.beaconId)
                                     EnviarNotificacion(codigo,nombre: (beaconBD?.name)!,id: id)
                                     
                                 }else{
+                                    mostrar = true
                                     codigo = 1
                                     //EnviarNotificacion(codigo,nombre: (beaconBD?.name)!)
                                     
@@ -86,7 +102,6 @@ class ListBeaconsRastreatorViewController: UIViewController,CLLocationManagerDel
             
         }
         else {
-            print("no se encuentran dispositivos, numero de beacons encontrados = \(knownBeacons.count)")
             //nombre.text = ""
             //cajatexto.text = "no se encuentran dispositivos"
         }

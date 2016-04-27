@@ -48,6 +48,17 @@ class Beacon : NSObject{
             throw DataAccessError.Insert_Error
         }
     }
+    static func deleteBeacon(id : Int64) throws -> Void{
+        let beacon = Beacon()
+        beacon.beaconId = id
+        
+        do{
+            try BeaconDataHelper.delete(beacon)
+        } catch{
+            throw DataAccessError.Delete_Error
+        }
+    }
+
 }
 func ==(lhs: Beacon, rhs: Beacon) -> Bool {
     return lhs.beaconId == rhs.beaconId && lhs.name == rhs.name

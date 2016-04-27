@@ -1,20 +1,10 @@
 PODS:
-  - SQLite.swift (0.9.3)
+  - SQLite.swift (0.10.1)
 
 DEPENDENCIES:
-  - SQLite.swift (from `https://github.com/brandenr/SQLite.swift.git`, commit `33ced0255e99e85b7ad65288dc777f6bb9c53687`)
-
-EXTERNAL SOURCES:
-  SQLite.swift:
-    :commit: 33ced0255e99e85b7ad65288dc777f6bb9c53687
-    :git: https://github.com/brandenr/SQLite.swift.git
-
-CHECKOUT OPTIONS:
-  SQLite.swift:
-    :commit: 33ced0255e99e85b7ad65288dc777f6bb9c53687
-    :git: https://github.com/brandenr/SQLite.swift.git
+  - SQLite.swift (~> 0.10.1)
 
 SPEC CHECKSUMS:
-  SQLite.swift: 5e76eb3f858a38d0d35d67fa9e37930ae1c408dc
+  SQLite.swift: 6a6e4b034efc317ce4e203b6af2d3024fee2b570
 
 COCOAPODS: 0.39.0
