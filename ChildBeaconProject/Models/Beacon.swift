@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import CoreLocation
 class Beacon : NSObject{
     var beaconId = Int64()
     var beaconGroupId = Int64()
@@ -15,6 +15,8 @@ class Beacon : NSObject{
     var minor = String()
     var major = String()
     var distance = Float()
+    var beaconGroupUUID = String()
+     dynamic var lastSeenBeacon: CLBeacon?
    
     override
     var hashValue: Int {
@@ -23,12 +25,13 @@ class Beacon : NSObject{
         }
     }
     
-    static func addBeacon(name: String,minor: String,major: String,group: Int64) throws -> Void{
+    static func addBeacon(name: String,minor: String,major: String,group: Int64,groupUUID:String) throws -> Void{
         let beacon = Beacon()
         beacon.name = name
         beacon.beaconGroupId = group
         beacon.minor = minor
         beacon.major = major
+        beacon.beaconGroupUUID = groupUUID
         
         do{
             try BeaconDataHelper.insert(beacon)
@@ -60,6 +63,15 @@ class Beacon : NSObject{
     }
 
 }
+func ==(item: Beacon, beacon: CLBeacon) -> Bool {
+    return ((beacon.proximityUUID.UUIDString == item.beaconGroupUUID)
+        && (Int(beacon.major) == Int(item.major))
+        && (Int(beacon.minor) == Int(item.minor)))
+}
+
 func ==(lhs: Beacon, rhs: Beacon) -> Bool {
-    return lhs.beaconId == rhs.beaconId && lhs.name == rhs.name
+    return (lhs.beaconId == rhs.beaconId)
+        && (lhs.name == rhs.name)
+        && (Int(lhs.minor) == Int(rhs.minor))
+        && (Int(lhs.major) == Int(rhs.major))
 }

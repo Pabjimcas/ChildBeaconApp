@@ -22,7 +22,7 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSLocationWhenInUseUsageDescription</key>
+	<key>NSLocationAlwaysUsageDescription</key>
 	<string>ibeacon localizado</string>
 	<key>UIBackgroundModes</key>
 	<array>

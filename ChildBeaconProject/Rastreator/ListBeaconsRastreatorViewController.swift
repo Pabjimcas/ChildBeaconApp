@@ -6,7 +6,7 @@
 //  Copyright © 2016 mikel balduciel diaz. All rights reserved.
 //
 
-import UIKit
+/*import UIKit
 import CoreLocation
 class ListBeaconsRastreatorViewController: UIViewController,CLLocationManagerDelegate{
     @IBOutlet weak var tableView: UITableView!
@@ -195,4 +195,4 @@ class ListBeaconsRastreatorViewController: UIViewController,CLLocationManagerDel
     }
 
 
-}
+}*/

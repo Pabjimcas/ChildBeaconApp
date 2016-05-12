@@ -13,11 +13,13 @@ class MainViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     let datos = ["Platano","Manzana","Mandarina"]
     var datosBD = [BeaconGroup]()
     var datoSeleccionado : Int64!
+    var datoSeleccionadoUUID : String!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad()        
         initDB()
         crearGrupo()
+        formatoEstilo()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -25,6 +27,8 @@ class MainViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         tableView.reloadData()
         
     }
+    
+    
     func initDB(){
         let dataStore = SQLiteDataStore.sharedInstance
         do{
@@ -35,6 +39,7 @@ class MainViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
         print ("Finish")
     }
+    
     func crearGrupo(){
         
         do {
@@ -49,6 +54,16 @@ class MainViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }catch {
             
         }
+    }
+    
+    func formatoEstilo(){
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        imageView.contentMode = .ScaleAspectFit
+        
+        let logo = UIImage(named: "logo_icon")
+        imageView.image = logo
+        
+        navigationItem.titleView = imageView
     }
     //MARK: UITableView delegate methods
     
@@ -72,6 +87,7 @@ class MainViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.datoSeleccionado = datosBD[indexPath.row].beaconGroupId
+        self.datoSeleccionadoUUID = datosBD[indexPath.row].UUID
         print("dato: \(self.datoSeleccionado)")
         self.performSegueWithIdentifier("menuSegue", sender: self)
         
@@ -85,6 +101,7 @@ class MainViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         if (segue.identifier == "menuSegue") {
             let svc = segue.destinationViewController as! MenuViewController
             svc.groupId = datoSeleccionado
+            svc.groupUUID = datoSeleccionadoUUID
         }else if segue.identifier == "modalAddGroupSegue" {
             let destination = segue.destinationViewController as! AddGroupViewController
             destination.delegate = self

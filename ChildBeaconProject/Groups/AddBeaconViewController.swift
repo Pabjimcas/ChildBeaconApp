@@ -14,6 +14,7 @@ class AddBeaconViewController: UIViewController {
     @IBOutlet weak var minorTf: UITextField!
     @IBOutlet weak var majorTf: UITextField!
     var groupId : Int64!
+    var groupUUID : String!
     var delegate : GroupViewController?
     var beacon : Beacon?
     override func viewDidLoad() {
@@ -43,7 +44,7 @@ class AddBeaconViewController: UIViewController {
                     
                     print("actualizacion correcta: \(nameTf.text!)")
                 }else {
-                    try Beacon.addBeacon(nameTf.text!, minor: minorTf.text!, major: majorTf.text!,group:groupId)
+                    try Beacon.addBeacon(nameTf.text!, minor: minorTf.text!, major: majorTf.text!,group:groupId,groupUUID: groupUUID)
                     self.dismissViewControllerAnimated(true, completion: {})
                     
                     print("insercion correcta: \(nameTf.text!)")
@@ -62,7 +63,13 @@ class AddBeaconViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: {})
     }
     
-
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        self.view.endEditing(true)
+        
+        return true
+        
+    }
    
 
 }

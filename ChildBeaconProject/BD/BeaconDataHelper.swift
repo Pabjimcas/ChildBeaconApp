@@ -17,6 +17,7 @@ class BeaconDataHelper: DataHelperProtocol {
     static let beaconId = Expression<Int64>("beaconId")
     static let beaconGroupId = Expression<Int64>("beaconGroupId")
     static let name = Expression<String>("name")
+     static let beaconGroupUUID = Expression<String>("beaconGroupUUID")
     static let minor = Expression<String>("minor")
     static let major = Expression<String>("major")
     typealias T = Beacon
@@ -32,6 +33,7 @@ class BeaconDataHelper: DataHelperProtocol {
                 t.column(name, unique: true)
                 t.column(minor)
                 t.column(major)
+                t.column(beaconGroupUUID)
                
                 })
         }catch _ {
@@ -42,7 +44,7 @@ class BeaconDataHelper: DataHelperProtocol {
         guard let DB = SQLiteDataStore.sharedInstance.DB else {
             throw DataAccessError.Datastore_Connection_Error
         }
-        let insert = table.insert(beaconGroupId <- item.beaconGroupId,name <- item.name, minor <- item.minor, major <- item.major)
+        let insert = table.insert(beaconGroupId <- item.beaconGroupId,name <- item.name, minor <- item.minor, major <- item.major,beaconGroupUUID <- item.beaconGroupUUID)
             do {
                 let rowId = try DB.run(insert)
                 guard rowId > 0 else {
@@ -84,113 +86,7 @@ class BeaconDataHelper: DataHelperProtocol {
         } catch _ {
             throw DataAccessError.Delete_Error
         }
-    }/*
-    static func updateCart (item: T) throws -> Void {
-        guard let DB = SQLiteDataStore.sharedInstance.DB else {
-            throw DataAccessError.Datastore_Connection_Error
-        }
-        
-        let query = table.filter(ingredientId == item.ingredientId)
-        do {
-            let tmp = try DB.run(query.update(cartId <- item.cartId))
-            guard tmp == 1 else {
-                throw DataAccessError.Delete_Error
-            }
-        } catch _ {
-            throw DataAccessError.Delete_Error
-        }
     }
-    
-    static func findIngredientsInStorage () throws -> [T]? {
-        guard let DB = SQLiteDataStore.sharedInstance.DB else {
-            throw DataAccessError.Datastore_Connection_Error
-        }
-        
-        let query = table.filter(storageId == 1)
-        var retArray = [T]()
-        let items = try DB.prepare(query)
-        for item in items {
-            let ingredient = Ingredient()
-            ingredient.ingredientId = item[ingredientId]
-            ingredient.ingredientIdServer = item[ingredientIdServer]
-            ingredient.name = item[name]
-            ingredient.baseType = item[baseType]
-            ingredient.category = item[category]
-            ingredient.frozen = FrozenTypes(rawValue: item[frozen])!
-            ingredient.storageId = item[storageId]
-            ingredient.cartId = item[cartId]
-            retArray.append(ingredient)
-        }
-        return retArray
-    }
-    static func findIngredientsNotInStorage () throws -> [T]? {
-        guard let DB = SQLiteDataStore.sharedInstance.DB else {
-            throw DataAccessError.Datastore_Connection_Error
-        }
-        
-        let query = table.filter(storageId != 1)
-        var retArray = [T]()
-        let items = try DB.prepare(query)
-        for item in items {
-            let ingredient = Ingredient()
-            ingredient.ingredientId = item[ingredientId]
-            ingredient.ingredientIdServer = item[ingredientIdServer]
-            ingredient.name = item[name]
-            ingredient.baseType = item[baseType]
-            ingredient.category = item[category]
-            ingredient.frozen = FrozenTypes(rawValue: item[frozen])!
-            ingredient.storageId = item[storageId]
-            ingredient.cartId = item[cartId]
-            retArray.append(ingredient)
-        }
-        return retArray
-    }
-    static func findIngredientsNotInStorageCart () throws -> [T]? {
-        guard let DB = SQLiteDataStore.sharedInstance.DB else {
-            throw DataAccessError.Datastore_Connection_Error
-        }
-        
-        let query = table.filter(storageId != 1)
-        let query2 = query.filter(cartId != 1)
-        var retArray = [T]()
-        let items = try DB.prepare(query2)
-        for item in items {
-            let ingredient = Ingredient()
-            ingredient.ingredientId = item[ingredientId]
-            ingredient.ingredientIdServer = item[ingredientIdServer]
-            ingredient.name = item[name]
-            ingredient.baseType = item[baseType]
-            ingredient.category = item[category]
-            ingredient.frozen = FrozenTypes(rawValue: item[frozen])!
-            ingredient.storageId = item[storageId]
-            ingredient.cartId = item[cartId]
-            retArray.append(ingredient)
-        }
-        return retArray
-    }
-    
-    static func findIngredientsInCart () throws -> [T]? {
-        guard let DB = SQLiteDataStore.sharedInstance.DB else {
-            throw DataAccessError.Datastore_Connection_Error
-        }
-        
-        let query = table.filter(cartId == 1)
-        var retArray = [T]()
-        let items = try DB.prepare(query)
-        for item in items {
-            let ingredient = Ingredient()
-            ingredient.ingredientId = item[ingredientId]
-            ingredient.ingredientIdServer = item[ingredientIdServer]
-            ingredient.name = item[name]
-            ingredient.baseType = item[baseType]
-            ingredient.category = item[category]
-            ingredient.frozen = FrozenTypes(rawValue: item[frozen])!
-            ingredient.storageId = item[storageId]
-            ingredient.cartId = item[cartId]
-            retArray.append(ingredient)
-        }
-        return retArray
-    }*/
 
     static func find(id: Int64) throws -> T? {
         guard let DB = SQLiteDataStore.sharedInstance.DB else {
@@ -205,6 +101,7 @@ class BeaconDataHelper: DataHelperProtocol {
             beacon.name = item[name]
             beacon.minor = item[minor]
             beacon.major = item[major]
+            beacon.beaconGroupUUID = item[beaconGroupUUID]
             return beacon
         }
         
@@ -224,34 +121,13 @@ class BeaconDataHelper: DataHelperProtocol {
             beacon.name = item[name]
             beacon.minor = item[minor]
             beacon.major = item[major]
+            beacon.beaconGroupUUID = item[beaconGroupUUID]
             return beacon
         }
         
         return nil
         
     }
-    /*static func findIdServer(id: Int64) throws -> T? {
-        guard let DB = SQLiteDataStore.sharedInstance.DB else {
-            throw DataAccessError.Datastore_Connection_Error
-        }
-        let query = table.filter(ingredientIdServer == id)
-        let items = try DB.prepare(query)
-        for item in  items {
-            let ingredient = Ingredient()
-            ingredient.ingredientId = item[ingredientId]
-            ingredient.ingredientIdServer = item[ingredientIdServer]
-            ingredient.name = item[name]
-            ingredient.baseType = item[baseType]
-            ingredient.category = item[category]
-            ingredient.frozen = FrozenTypes(rawValue: item[frozen])!
-            ingredient.storageId = item[storageId]
-            ingredient.cartId = item[cartId]
-            return ingredient
-        }
-        
-        return nil
-        
-    }*/
     
     static func findAllbyGroup(id: Int64) throws -> [T]? {
         guard let DB = SQLiteDataStore.sharedInstance.DB else {
@@ -267,6 +143,7 @@ class BeaconDataHelper: DataHelperProtocol {
             beacon.name = item[name]
             beacon.minor = item[minor]
             beacon.major = item[major]
+            beacon.beaconGroupUUID = item[beaconGroupUUID]
             retArray.append(beacon)
         }
         
@@ -286,6 +163,7 @@ class BeaconDataHelper: DataHelperProtocol {
             beacon.name = item[name]
             beacon.minor = item[minor]
             beacon.major = item[major]
+            beacon.beaconGroupUUID = item[beaconGroupUUID]
             retArray.append(beacon)
         }
         

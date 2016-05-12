@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		46C4DA064D09D6A50A9ED5CD /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCD192423CB4AB97AC2538D0 /* Pods.framework */; };
+		6307419F1CD0BC3C0075A0A7 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6307419E1CD0BC3C0075A0A7 /* SQLite.framework */; };
 		B5BB3B5C1C9A2B3A007A7195 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3B5B1C9A2B3A007A7195 /* AppDelegate.swift */; };
 		B5BB3B631C9A2B3A007A7195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5BB3B621C9A2B3A007A7195 /* Assets.xcassets */; };
 		B5BB3B661C9A2B3A007A7195 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5BB3B641C9A2B3A007A7195 /* LaunchScreen.storyboard */; };
@@ -32,11 +33,13 @@
 		B5BB3BAE1C9A4CC0007A7195 /* BeaconGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3BAD1C9A4CC0007A7195 /* BeaconGroup.swift */; };
 		B5BB3BB21C9A4DB8007A7195 /* BeaconGroupDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3BB11C9A4DB8007A7195 /* BeaconGroupDataHelper.swift */; };
 		B5BB3BB61C9A5553007A7195 /* AddBeaconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3BB51C9A5553007A7195 /* AddBeaconViewController.swift */; };
+		B5C827621CE0C98100B744B2 /* BeaconsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C827611CE0C98100B744B2 /* BeaconsListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0A2DFE6A2D0EA7E5678AEE8F /* Pods_ChildBeaconProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChildBeaconProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4753ED80FC4991F7143A1A26 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6307419E1CD0BC3C0075A0A7 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = "Pods/../build/Debug-iphoneos/SQLite.framework"; sourceTree = "<group>"; };
 		B502D6031CA28C880066EA6C /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = "../../../../Library/Developer/Xcode/DerivedData/ChildBeaconProject-bcjqhbhjllufjqgulrkkdydwnxvg/Build/Products/Debug-iphonesimulator/SQLite.framework"; sourceTree = "<group>"; };
 		B5BB3B581C9A2B3A007A7195 /* ChildBeaconProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChildBeaconProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5BB3B5B1C9A2B3A007A7195 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +67,7 @@
 		B5BB3BAD1C9A4CC0007A7195 /* BeaconGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeaconGroup.swift; path = Models/BeaconGroup.swift; sourceTree = "<group>"; };
 		B5BB3BB11C9A4DB8007A7195 /* BeaconGroupDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeaconGroupDataHelper.swift; path = BD/BeaconGroupDataHelper.swift; sourceTree = "<group>"; };
 		B5BB3BB51C9A5553007A7195 /* AddBeaconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddBeaconViewController.swift; path = Groups/AddBeaconViewController.swift; sourceTree = "<group>"; };
+		B5C827611CE0C98100B744B2 /* BeaconsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeaconsListViewController.swift; path = Rastreator/BeaconsListViewController.swift; sourceTree = "<group>"; };
 		B5D1F48D1CA2953E000120E3 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = "../../../../Library/Developer/Xcode/DerivedData/ChildBeaconProject-bcjqhbhjllufjqgulrkkdydwnxvg/Build/Products/Debug-iphoneos/SQLite.framework"; sourceTree = "<group>"; };
 		BCD192423CB4AB97AC2538D0 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFDC25CA60EEF9337E863B12 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -74,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6307419F1CD0BC3C0075A0A7 /* SQLite.framework in Frameworks */,
 				46C4DA064D09D6A50A9ED5CD /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,6 +149,7 @@
 				B5BB3B8F1C9A4468007A7195 /* ListBeaconsRastreatorViewController.swift */,
 				B5BB3B901C9A4468007A7195 /* MapBeaconsRastreatorViewController.swift */,
 				B5BB3B911C9A4468007A7195 /* Rastreator.storyboard */,
+				B5C827611CE0C98100B744B2 /* BeaconsListViewController.swift */,
 			);
 			name = Rastreator;
 			sourceTree = "<group>";
@@ -183,6 +189,7 @@
 		E2D2EC569624807B1A24597A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6307419E1CD0BC3C0075A0A7 /* SQLite.framework */,
 				B5D1F48D1CA2953E000120E3 /* SQLite.framework */,
 				B502D6031CA28C880066EA6C /* SQLite.framework */,
 				BCD192423CB4AB97AC2538D0 /* Pods.framework */,
@@ -321,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5C827621CE0C98100B744B2 /* BeaconsListViewController.swift in Sources */,
 				B5BB3BA51C9A456B007A7195 /* BeaconDataHelper.swift in Sources */,
 				B5BB3B9F1C9A4534007A7195 /* MainGroupsTableViewCell.swift in Sources */,
 				B5BB3BAB1C9A4652007A7195 /* Beacon.swift in Sources */,
@@ -444,6 +452,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = ChildBeaconProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -459,6 +471,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = ChildBeaconProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

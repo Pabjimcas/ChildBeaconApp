@@ -10,6 +10,7 @@ import UIKit
 
 class MenuViewController: UIViewController {
     var groupId : Int64!
+    var groupUUID : String!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,11 +25,13 @@ class MenuViewController: UIViewController {
         if segue.identifier == "groupVCSegue" {
             let destination = segue.destinationViewController as! GroupViewController
             destination.group = groupId
+            destination.groupUUID = groupUUID
 
         }else if segue.identifier == "rastreatorSegue"  {
             let tabBarController = segue.destinationViewController as! UITabBarController
-            let destination = tabBarController.viewControllers![0] as! ListBeaconsRastreatorViewController
+            let destination = tabBarController.viewControllers![0] as! BeaconsListViewController
             destination.group = groupId
+            destination.groupUUID = groupUUID
         }
     }
 }

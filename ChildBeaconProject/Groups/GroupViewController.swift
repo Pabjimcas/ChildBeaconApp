@@ -12,22 +12,23 @@ class GroupViewController: UIViewController,UITableViewDataSource,UITableViewDel
     let beacons = ["Beacon1","Beacon2","Beacon3"]
     var beaconsBD = [Beacon]()
     var group = Int64()
+    var groupUUID = String()
     var datoSeleccionado : Beacon?
     var buttonRow = 0
-
+    
     @IBOutlet weak var deleteGroupBt: UIButton!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        if beaconsBD.count == 0 {
+        if beaconsBD.count <= 0 {
             deleteGroupBt.enabled = true
+        }else {
+            deleteGroupBt.enabled = false
         }
-
-        // Do any additional setup after loading the view.
     }
     
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -35,8 +36,13 @@ class GroupViewController: UIViewController,UITableViewDataSource,UITableViewDel
     override func viewWillAppear(animated: Bool) {
         recogerDatos()
         tableView.reloadData()
+        if beaconsBD.count <= 0 {
+            deleteGroupBt.enabled = true
+        }else {
+            deleteGroupBt.enabled = false
+        }
     }
-
+    
     //MARK: UITableView delegate methods
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,6 +59,7 @@ class GroupViewController: UIViewController,UITableViewDataSource,UITableViewDel
         
         let row = indexPath.row
         cell.nameBeaconLabel.text = beaconsBD[row].name
+        cell.uuidBeaconLabel.text = "major: \(beaconsBD[row].major) minor: \(beaconsBD[row].minor)"
         cell.editBt.tag = row
         cell.editBt.addTarget(self, action: "buttonClicked:", forControlEvents: UIControlEvents.TouchUpInside)
         cell.deleteBt.tag = row
@@ -65,13 +72,14 @@ class GroupViewController: UIViewController,UITableViewDataSource,UITableViewDel
     }
     func deleteBeacon (sender:UIButton){
         buttonRow = sender.tag
-        if beaconsBD.count == 1 {
-            deleteGroupBt.enabled = true
-        }
-       do{
+        
+        do{
             
             try Beacon.deleteBeacon(beaconsBD[buttonRow].beaconId)
             beaconsBD.removeAtIndex(buttonRow)
+            if beaconsBD.count < 1 {
+                deleteGroupBt.enabled = true
+            }
             print("beacon borrado")
             tableView.reloadData()
         }catch {
@@ -84,8 +92,8 @@ class GroupViewController: UIViewController,UITableViewDataSource,UITableViewDel
         //self.performSegueWithIdentifier("menuSegue", sender: self)
         
         /*let externalStoryboard = UIStoryboard(name: "GroupsStoryboard", bundle: nil)
-        let shoppingListInstance = externalStoryboard.instantiateViewControllerWithIdentifier("shoppingListID") as? ShoopingListViewController
-        self.navigationController?.pushViewController(shoppingListInstance!, animated: true)*/
+         let shoppingListInstance = externalStoryboard.instantiateViewControllerWithIdentifier("shoppingListID") as? ShoopingListViewController
+         self.navigationController?.pushViewController(shoppingListInstance!, animated: true)*/
         
     }
     
@@ -100,11 +108,12 @@ class GroupViewController: UIViewController,UITableViewDataSource,UITableViewDel
     @IBAction func updateAction(sender: UIButton) {
         
     }
-
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "modalAddBeaconSegue" {
             let destination = segue.destinationViewController as! AddBeaconViewController
             destination.groupId = group
+            destination.groupUUID = groupUUID
             destination.delegate = self
         }else if segue.identifier == "modalUpdateBeaconSegue" {
             let destination = segue.destinationViewController as! AddBeaconViewController
@@ -118,7 +127,7 @@ class GroupViewController: UIViewController,UITableViewDataSource,UITableViewDel
         let beaconGroup = BeaconGroup()
         beaconGroup.beaconGroupId = self.group
         do{
-          try BeaconGroupDataHelper.delete(beaconGroup)
+            try BeaconGroupDataHelper.delete(beaconGroup)
             print("grupo borrado")
             navigationController?.popToRootViewControllerAnimated(true)
         }catch {
@@ -126,6 +135,6 @@ class GroupViewController: UIViewController,UITableViewDataSource,UITableViewDel
         }
         
     }
-
-
+    
+    
 }
