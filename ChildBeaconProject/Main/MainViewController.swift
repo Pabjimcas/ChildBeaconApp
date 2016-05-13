@@ -19,7 +19,6 @@ class MainViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         super.viewDidLoad()        
         initDB()
         crearGrupo()
-        formatoEstilo()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -56,15 +55,6 @@ class MainViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
     }
     
-    func formatoEstilo(){
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-        imageView.contentMode = .ScaleAspectFit
-        
-        let logo = UIImage(named: "logo_icon")
-        imageView.image = logo
-        
-        navigationItem.titleView = imageView
-    }
     //MARK: UITableView delegate methods
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
