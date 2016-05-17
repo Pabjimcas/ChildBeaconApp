@@ -18,18 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="T4F-9Q-sPz">
-                                <rect key="frame" x="140" y="73" width="320" height="453"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="T4F-9Q-sPz" secondAttribute="height" multiplier="320:453" id="dwt-RB-WRd"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="T4F-9Q-sPz">
+                                <rect key="frame" x="113" y="35" width="375" height="530"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.30196078431372547" green="0.55294117647058827" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="T4F-9Q-sPz" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="Jb7-CX-K9I"/>
-                            <constraint firstItem="T4F-9Q-sPz" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="qam-lQ-xD0"/>
-                            <constraint firstItem="T4F-9Q-sPz" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="suP-br-BYw"/>
+                            <constraint firstItem="T4F-9Q-sPz" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="15" id="0R5-kE-0Fe"/>
+                            <constraint firstItem="T4F-9Q-sPz" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="2AW-nq-Pxb"/>
+                            <constraint firstItem="T4F-9Q-sPz" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="5:8" id="Rr5-GS-gM3"/>
+                            <constraint firstItem="T4F-9Q-sPz" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="t8h-Hv-9DW"/>
                         </constraints>
                     </view>
                 </viewController>
