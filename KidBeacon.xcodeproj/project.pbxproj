@@ -41,7 +41,7 @@
 		6307419E1CD0BC3C0075A0A7 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = "Pods/../build/Debug-iphoneos/SQLite.framework"; sourceTree = "<group>"; };
 		63C751D11CE55FBF00189F6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B502D6031CA28C880066EA6C /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = "../../../../Library/Developer/Xcode/DerivedData/ChildBeaconProject-bcjqhbhjllufjqgulrkkdydwnxvg/Build/Products/Debug-iphonesimulator/SQLite.framework"; sourceTree = "<group>"; };
-		B5BB3B581C9A2B3A007A7195 /* ChildBeaconProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChildBeaconProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5BB3B581C9A2B3A007A7195 /* KidBeacon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KidBeacon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5BB3B5B1C9A2B3A007A7195 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5BB3B651C9A2B3A007A7195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5BB3B671C9A2B3A007A7195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 		B5BB3B591C9A2B3A007A7195 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B5BB3B581C9A2B3A007A7195 /* ChildBeaconProject.app */,
+				B5BB3B581C9A2B3A007A7195 /* KidBeacon.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -201,9 +201,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B5BB3B571C9A2B3A007A7195 /* ChildBeaconProject */ = {
+		B5BB3B571C9A2B3A007A7195 /* KidBeacon */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B5BB3B6A1C9A2B3A007A7195 /* Build configuration list for PBXNativeTarget "ChildBeaconProject" */;
+			buildConfigurationList = B5BB3B6A1C9A2B3A007A7195 /* Build configuration list for PBXNativeTarget "KidBeacon" */;
 			buildPhases = (
 				5AF3FC091CD27840A170D737 /* 📦 Check Pods Manifest.lock */,
 				B5BB3B541C9A2B3A007A7195 /* Sources */,
@@ -216,9 +216,9 @@
 			);
 			dependencies = (
 			);
-			name = ChildBeaconProject;
+			name = KidBeacon;
 			productName = ChildBeaconProject;
-			productReference = B5BB3B581C9A2B3A007A7195 /* ChildBeaconProject.app */;
+			productReference = B5BB3B581C9A2B3A007A7195 /* KidBeacon.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -242,7 +242,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B5BB3B531C9A2B3A007A7195 /* Build configuration list for PBXProject "ChildBeaconProject" */;
+			buildConfigurationList = B5BB3B531C9A2B3A007A7195 /* Build configuration list for PBXProject "KidBeacon" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -255,7 +255,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B5BB3B571C9A2B3A007A7195 /* ChildBeaconProject */,
+				B5BB3B571C9A2B3A007A7195 /* KidBeacon */,
 			);
 		};
 /* End PBXProject section */
@@ -457,10 +457,10 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = ChildBeaconProject/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = es.upsa.mimo.ChildBeacons.ChildBeaconProject;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = KidBeacon;
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
@@ -476,10 +476,10 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = ChildBeaconProject/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = es.upsa.mimo.ChildBeacons.ChildBeaconProject;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = KidBeacon;
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
@@ -487,7 +487,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B5BB3B531C9A2B3A007A7195 /* Build configuration list for PBXProject "ChildBeaconProject" */ = {
+		B5BB3B531C9A2B3A007A7195 /* Build configuration list for PBXProject "KidBeacon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B5BB3B681C9A2B3A007A7195 /* Debug */,
@@ -496,7 +496,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B5BB3B6A1C9A2B3A007A7195 /* Build configuration list for PBXNativeTarget "ChildBeaconProject" */ = {
+		B5BB3B6A1C9A2B3A007A7195 /* Build configuration list for PBXNativeTarget "KidBeacon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B5BB3B6B1C9A2B3A007A7195 /* Debug */,

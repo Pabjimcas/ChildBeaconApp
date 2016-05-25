@@ -20,7 +20,7 @@
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="ChildBeaconProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="KidBeacon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mgA-pK-SMY"/>
                         <viewControllerLayoutGuide type="bottom" id="1he-KJ-7hk"/>
@@ -35,7 +35,7 @@
                                 <color key="separatorColor" red="1" green="0.89411764705882346" blue="0.72156862745098038" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Gcell" selectionStyle="default" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="GCell" rowHeight="70" id="fnR-Kf-Hxt" customClass="MainGroupsTableViewCell" customModule="ChildBeaconProject" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Gcell" selectionStyle="default" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="GCell" rowHeight="70" id="fnR-Kf-Hxt" customClass="MainGroupsTableViewCell" customModule="KidBeacon" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fnR-Kf-Hxt" id="MVF-tz-Lvv">
@@ -130,7 +130,7 @@
         <!--Menu View Controller-->
         <scene sceneID="lYQ-uM-67v">
             <objects>
-                <viewController storyboardIdentifier="menuVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fkC-xe-chM" customClass="MenuViewController" customModule="ChildBeaconProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="menuVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fkC-xe-chM" customClass="MenuViewController" customModule="KidBeacon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5iE-zg-kPi"/>
                         <viewControllerLayoutGuide type="bottom" id="QfV-bM-uRI"/>

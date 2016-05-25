@@ -11,7 +11,7 @@
         <!--Add Group View Controller-->
         <scene sceneID="698-TP-U3L">
             <objects>
-                <viewController storyboardIdentifier="AddGroupVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BnK-p7-BqL" customClass="AddGroupViewController" customModule="ChildBeaconProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddGroupVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BnK-p7-BqL" customClass="AddGroupViewController" customModule="KidBeacon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pVQ-Mi-OSl"/>
                         <viewControllerLayoutGuide type="bottom" id="pzh-uQ-fiW"/>
@@ -44,14 +44,11 @@
                                 <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w8R-eP-TAR">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="w8R-eP-TAR">
                                 <rect key="frame" x="35" y="160" width="530" height="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="closeKeyboardAction:" destination="BnK-p7-BqL" eventType="editingDidEndOnExit" id="MHN-td-4zX"/>
-                                </connections>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9tX-yu-NZE">
                                 <rect key="frame" x="300" y="550" width="300" height="50"/>
@@ -105,7 +102,7 @@
         <!--Group View Controller-->
         <scene sceneID="4ho-GQ-p1o">
             <objects>
-                <viewController storyboardIdentifier="GroupVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ucb-9u-Ebv" customClass="GroupViewController" customModule="ChildBeaconProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GroupVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ucb-9u-Ebv" customClass="GroupViewController" customModule="KidBeacon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bDP-T8-91e"/>
                         <viewControllerLayoutGuide type="bottom" id="CdP-yf-2EP"/>
@@ -118,7 +115,7 @@
                                 <rect key="frame" x="0.0" y="25" width="600" height="463"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BeaconCell" id="Lwd-I2-vO7" customClass="BeaconTableViewCell" customModule="ChildBeaconProject" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BeaconCell" id="Lwd-I2-vO7" customClass="BeaconTableViewCell" customModule="KidBeacon" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lwd-I2-vO7" id="iv7-K4-haR">
@@ -249,7 +246,7 @@
         <!--Add Beacon View Controller-->
         <scene sceneID="q0H-j4-vUh">
             <objects>
-                <viewController id="qCQ-rD-WIA" customClass="AddBeaconViewController" customModule="ChildBeaconProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qCQ-rD-WIA" customClass="AddBeaconViewController" customModule="KidBeacon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uCJ-hh-80f"/>
                         <viewControllerLayoutGuide type="bottom" id="d6e-0c-kL5"/>
@@ -258,11 +255,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mz9-If-m5d">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mz9-If-m5d">
                                 <rect key="frame" x="35" y="140" width="530" height="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                                 <connections>
                                     <outlet property="delegate" destination="qCQ-rD-WIA" id="Q8C-Hv-LUa"/>
                                 </connections>

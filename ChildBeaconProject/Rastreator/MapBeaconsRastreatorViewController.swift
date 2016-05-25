@@ -31,19 +31,19 @@ class MapBeaconsRastreatorViewController: UIViewController,CLLocationManagerDele
     
     func addRadiusCircle(location: CLLocation){
         self.mapView.delegate = self
-        var circle = MKCircle(centerCoordinate: location.coordinate, radius: 50 as CLLocationDistance)
+        let circle = MKCircle(centerCoordinate: location.coordinate, radius: 50 as CLLocationDistance)
         self.mapView.addOverlay(circle)
     }
     
-    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
+    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
         if overlay is MKCircle {
-            var circle = MKCircleRenderer(overlay: overlay)
+            let circle = MKCircleRenderer(overlay: overlay)
             circle.strokeColor = UIColor.redColor()
-            circle.fillColor = UIColor(red: 255, green: 0, blue: 0, alpha: 0.1)
+            circle.fillColor = UIColor(red: 255, green: 0, blue: 0, alpha: 0.2)
             circle.lineWidth = 1
             return circle
         } else {
-            return nil
+            return MKOverlayRenderer()
         }
     }
     //MARK - Location Manager
@@ -60,10 +60,10 @@ class MapBeaconsRastreatorViewController: UIViewController,CLLocationManagerDele
                 
             case .AuthorizedWhenInUse:
                 
-                //let center = CLLocationCoordinate2D(latitude: manager.location!.coordinate.latitude, longitude: manager.location!.coordinate.longitude)
-                //let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-                var location = CLLocation(latitude: manager.location!.coordinate.latitude as CLLocationDegrees, longitude: manager.location!.coordinate.longitude as CLLocationDegrees)
-                //mapView.setRegion(region, animated: true)
+                let center = CLLocationCoordinate2D(latitude: manager.location!.coordinate.latitude, longitude: manager.location!.coordinate.longitude)
+                let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+                let location = CLLocation(latitude: manager.location!.coordinate.latitude as CLLocationDegrees, longitude: manager.location!.coordinate.longitude as CLLocationDegrees)
+                mapView.setRegion(region, animated: true)
                 centerMapOnLocation(location)
                 addRadiusCircle(location)
                 manager.startUpdatingLocation()

@@ -45,7 +45,7 @@ class MainViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             let grupos = try BeaconGroupDataHelper.findAll()
             if grupos?.count <= 0 {
                 let beaconGroup = BeaconGroup()
-                beaconGroup.name = "Grupo Default"
+                beaconGroup.name = "Infantil 1A"
                 beaconGroup.UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D"
                 try BeaconGroupDataHelper.insert(beaconGroup)
             }

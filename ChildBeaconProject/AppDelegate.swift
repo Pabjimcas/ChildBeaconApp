@@ -77,7 +77,7 @@ extension AppDelegate: CLLocationManagerDelegate {
         if let beaconRegion = region as? CLBeaconRegion {
            print(beaconRegion.proximityUUID)
             let notification = UILocalNotification()
-            notification.alertBody = "Are you forgetting something? major: \(beaconRegion.major) minor: \(beaconRegion.minor)"
+            notification.alertBody = "Se ha perdido el contacto con el bacon con major: \(beaconRegion.major) y minor: \(beaconRegion.minor)"
             notification.soundName = "Default"
             UIApplication.sharedApplication().presentLocalNotificationNow(notification)
         }
