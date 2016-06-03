@@ -1,9 +1,8 @@
 //
-//  GroupViewController.swift
-//  ChildBeaconProject
-//
-//  Created by mikel balduciel diaz on 17/3/16.
-//  Copyright © 2016 mikel balduciel diaz. All rights reserved.
+//  KidBeacon
+//  Creado por Mikel Balduciel Diaz, Eduardo González de la Huebra Sánchez y David Jiménez Guinaldo en 2016
+//  para el Club Universitario de Innovación de la Universidad Pontificia de Salamanca.
+//  Copyright © 2016. Todos los derecho reservados.
 //
 
 import UIKit
@@ -53,17 +52,14 @@ class GroupViewController: UIViewController,UITableViewDataSource,UITableViewDel
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("BeaconCell") as! BeaconTableViewCell
-        // let group:GroupInfo = marrGroupData.objectAtIndex(indexPath.row) as! GroupInfo
-        //cell.btnGroup.setTitle(group.Name, forState: .Normal)
-        //cell.btnGroup.setTitle("\(group.Name)", forState: .Normal)
         
         let row = indexPath.row
         cell.nameBeaconLabel.text = beaconsBD[row].name
         cell.uuidBeaconLabel.text = "major: \(beaconsBD[row].major) minor: \(beaconsBD[row].minor)"
         cell.editBt.tag = row
-        cell.editBt.addTarget(self, action: "buttonClicked:", forControlEvents: UIControlEvents.TouchUpInside)
+        cell.editBt.addTarget(self, action: #selector(GroupViewController.buttonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         cell.deleteBt.tag = row
-        cell.deleteBt.addTarget(self, action: "deleteBeacon:", forControlEvents: UIControlEvents.TouchUpInside)
+        cell.deleteBt.addTarget(self, action: #selector(GroupViewController.deleteBeacon(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         return cell
     }
     func buttonClicked (sender:UIButton){
@@ -89,11 +85,6 @@ class GroupViewController: UIViewController,UITableViewDataSource,UITableViewDel
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.datoSeleccionado = beaconsBD[indexPath.row]
         print("dato: \(self.datoSeleccionado)")
-        //self.performSegueWithIdentifier("menuSegue", sender: self)
-        
-        /*let externalStoryboard = UIStoryboard(name: "GroupsStoryboard", bundle: nil)
-         let shoppingListInstance = externalStoryboard.instantiateViewControllerWithIdentifier("shoppingListID") as? ShoopingListViewController
-         self.navigationController?.pushViewController(shoppingListInstance!, animated: true)*/
         
     }
     

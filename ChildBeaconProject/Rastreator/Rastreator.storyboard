@@ -1,69 +1,83 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="KkL-an-RKm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KkL-an-RKm">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Map Beacons Rastreator View Controller-->
+        <!--Mapa-->
         <scene sceneID="Ieg-or-eAQ">
             <objects>
                 <viewController id="BrI-Sa-aKA" customClass="MapBeaconsRastreatorViewController" customModule="ChildBeaconProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZVd-rV-eEx"/>
+                        <viewControllerLayoutGuide type="bottom" id="TWh-tY-h8M"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="be3-fO-B7v">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="X06-SB-y8C">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="522"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="X06-SB-y8C">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="X06-SB-y8C" firstAttribute="bottom" secondItem="TWh-tY-h8M" secondAttribute="top" id="5Uz-SF-TRF"/>
+                            <constraint firstItem="X06-SB-y8C" firstAttribute="leading" secondItem="be3-fO-B7v" secondAttribute="leading" id="OA5-Da-379"/>
+                            <constraint firstAttribute="trailing" secondItem="X06-SB-y8C" secondAttribute="trailing" id="anN-8L-cBo"/>
+                            <constraint firstItem="X06-SB-y8C" firstAttribute="top" secondItem="be3-fO-B7v" secondAttribute="top" id="lM4-ne-VyU"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="TV4-wE-NDK"/>
+                    <tabBarItem key="tabBarItem" title="Mapa" image="geo_fence-50" id="TV4-wE-NDK"/>
                     <connections>
                         <outlet property="mapView" destination="X06-SB-y8C" id="tDe-HN-xcc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="of8-sY-F9q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2044" y="1314"/>
+            <point key="canvasLocation" x="3832" y="1388"/>
         </scene>
-        <!--Beacons List View Controller-->
+        <!--Listado-->
         <scene sceneID="9sB-mw-4wR">
             <objects>
                 <viewController id="lZV-qL-KdE" customClass="BeaconsListViewController" customModule="ChildBeaconProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b2P-Hh-wNl"/>
+                        <viewControllerLayoutGuide type="bottom" id="nT5-VL-aaD"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="upk-ow-ChE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="owU-ds-Lpq">
-                                <rect key="frame" x="0.0" y="20" width="320" height="497"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="owU-ds-Lpq">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BeaconCell" textLabel="ueW-S7-6JA" detailTextLabel="gwp-Po-SEN" style="IBUITableViewCellStyleSubtitle" id="eVO-s8-jWa" customClass="BeaconRastreatorTableViewCell" customModule="ChildBeaconProject" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eVO-s8-jWa" id="nnC-Zy-GCA">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ueW-S7-6JA">
-                                                    <rect key="frame" x="15" y="6" width="31.5" height="19.5"/>
+                                                    <rect key="frame" x="15" y="5" width="32" height="20"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gwp-Po-SEN">
-                                                    <rect key="frame" x="15" y="25.5" width="40.5" height="13.5"/>
+                                                    <rect key="frame" x="15" y="25" width="41" height="14"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="0.5" colorSpace="calibratedRGB"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -74,15 +88,21 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="owU-ds-Lpq" firstAttribute="width" secondItem="upk-ow-ChE" secondAttribute="width" id="0aS-YK-dfb"/>
+                            <constraint firstItem="owU-ds-Lpq" firstAttribute="leading" secondItem="upk-ow-ChE" secondAttribute="leading" id="AcP-7E-hKg"/>
+                            <constraint firstItem="owU-ds-Lpq" firstAttribute="top" secondItem="upk-ow-ChE" secondAttribute="top" id="O9X-oy-LoG"/>
+                            <constraint firstItem="owU-ds-Lpq" firstAttribute="height" secondItem="upk-ow-ChE" secondAttribute="height" id="OE6-Wz-bhd"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="dk5-U3-Zif"/>
+                    <tabBarItem key="tabBarItem" title="Listado" image="list-50" selectedImage="list-50" id="dk5-U3-Zif"/>
                     <connections>
                         <outlet property="tableView" destination="owU-ds-Lpq" id="9Sm-4W-fua"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCM-wd-USk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2044" y="685"/>
+            <point key="canvasLocation" x="3832.5" y="723.5915492957746"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="cbh-B6-FOF">
@@ -100,7 +120,11 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NS1-pj-BsZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1504" y="1000"/>
+            <point key="canvasLocation" x="2820" y="1056.338028169014"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="geo_fence-50" width="25" height="25"/>
+        <image name="list-50" width="25" height="25"/>
+    </resources>
 </document>

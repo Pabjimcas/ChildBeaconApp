@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6307419F1CD0BC3C0075A0A7 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6307419E1CD0BC3C0075A0A7 /* SQLite.framework */; };
+		6345C2CA1D023964007E0B44 /* MainGroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6345C2C91D023964007E0B44 /* MainGroupsTableViewCell.swift */; };
 		63C751D21CE55FBF00189F6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63C751D11CE55FBF00189F6B /* Assets.xcassets */; };
 		B5BB3B5C1C9A2B3A007A7195 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3B5B1C9A2B3A007A7195 /* AppDelegate.swift */; };
 		B5BB3B661C9A2B3A007A7195 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5BB3B641C9A2B3A007A7195 /* LaunchScreen.storyboard */; };
@@ -15,14 +16,12 @@
 		B5BB3B8C1C9A4448007A7195 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3B881C9A4448007A7195 /* MainViewController.swift */; };
 		B5BB3B8D1C9A4448007A7195 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3B891C9A4448007A7195 /* MenuViewController.swift */; };
 		B5BB3B921C9A4468007A7195 /* BeaconRastreatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3B8E1C9A4468007A7195 /* BeaconRastreatorTableViewCell.swift */; };
-		B5BB3B931C9A4468007A7195 /* ListBeaconsRastreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3B8F1C9A4468007A7195 /* ListBeaconsRastreatorViewController.swift */; };
 		B5BB3B941C9A4468007A7195 /* MapBeaconsRastreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3B901C9A4468007A7195 /* MapBeaconsRastreatorViewController.swift */; };
 		B5BB3B951C9A4468007A7195 /* Rastreator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5BB3B911C9A4468007A7195 /* Rastreator.storyboard */; };
 		B5BB3B9A1C9A4510007A7195 /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3B961C9A4510007A7195 /* AddGroupViewController.swift */; };
 		B5BB3B9B1C9A4510007A7195 /* BeaconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3B971C9A4510007A7195 /* BeaconTableViewCell.swift */; };
 		B5BB3B9C1C9A4510007A7195 /* GroupsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5BB3B981C9A4510007A7195 /* GroupsStoryboard.storyboard */; };
 		B5BB3B9D1C9A4510007A7195 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3B991C9A4510007A7195 /* GroupViewController.swift */; };
-		B5BB3B9F1C9A4534007A7195 /* MainGroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3B9E1C9A4534007A7195 /* MainGroupsTableViewCell.swift */; };
 		B5BB3BA41C9A456B007A7195 /* DataHelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3BA01C9A456B007A7195 /* DataHelperProtocol.swift */; };
 		B5BB3BA51C9A456B007A7195 /* BeaconDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3BA11C9A456B007A7195 /* BeaconDataHelper.swift */; };
 		B5BB3BA61C9A456B007A7195 /* NotificationsDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB3BA21C9A456B007A7195 /* NotificationsDataHelper.swift */; };
@@ -39,6 +38,7 @@
 /* Begin PBXFileReference section */
 		3B69F3E7BA1CC82896FBC98A /* Pods_ChildBeaconProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChildBeaconProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6307419E1CD0BC3C0075A0A7 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = "Pods/../build/Debug-iphoneos/SQLite.framework"; sourceTree = "<group>"; };
+		6345C2C91D023964007E0B44 /* MainGroupsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainGroupsTableViewCell.swift; path = Main/MainGroupsTableViewCell.swift; sourceTree = "<group>"; };
 		63C751D11CE55FBF00189F6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B502D6031CA28C880066EA6C /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = "../../../../Library/Developer/Xcode/DerivedData/ChildBeaconProject-bcjqhbhjllufjqgulrkkdydwnxvg/Build/Products/Debug-iphonesimulator/SQLite.framework"; sourceTree = "<group>"; };
 		B5BB3B581C9A2B3A007A7195 /* ChildBeaconProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChildBeaconProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,14 +49,12 @@
 		B5BB3B881C9A4448007A7195 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = Main/MainViewController.swift; sourceTree = "<group>"; };
 		B5BB3B891C9A4448007A7195 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = Main/MenuViewController.swift; sourceTree = "<group>"; };
 		B5BB3B8E1C9A4468007A7195 /* BeaconRastreatorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeaconRastreatorTableViewCell.swift; path = Rastreator/BeaconRastreatorTableViewCell.swift; sourceTree = "<group>"; };
-		B5BB3B8F1C9A4468007A7195 /* ListBeaconsRastreatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListBeaconsRastreatorViewController.swift; path = Rastreator/ListBeaconsRastreatorViewController.swift; sourceTree = "<group>"; };
 		B5BB3B901C9A4468007A7195 /* MapBeaconsRastreatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapBeaconsRastreatorViewController.swift; path = Rastreator/MapBeaconsRastreatorViewController.swift; sourceTree = "<group>"; };
 		B5BB3B911C9A4468007A7195 /* Rastreator.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Rastreator.storyboard; path = Rastreator/Rastreator.storyboard; sourceTree = "<group>"; };
 		B5BB3B961C9A4510007A7195 /* AddGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddGroupViewController.swift; path = Groups/AddGroupViewController.swift; sourceTree = "<group>"; };
 		B5BB3B971C9A4510007A7195 /* BeaconTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeaconTableViewCell.swift; path = Groups/BeaconTableViewCell.swift; sourceTree = "<group>"; };
 		B5BB3B981C9A4510007A7195 /* GroupsStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = GroupsStoryboard.storyboard; path = Groups/GroupsStoryboard.storyboard; sourceTree = "<group>"; };
 		B5BB3B991C9A4510007A7195 /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupViewController.swift; path = Groups/GroupViewController.swift; sourceTree = "<group>"; };
-		B5BB3B9E1C9A4534007A7195 /* MainGroupsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainGroupsTableViewCell.swift; path = Groups/MainGroupsTableViewCell.swift; sourceTree = "<group>"; };
 		B5BB3BA01C9A456B007A7195 /* DataHelperProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataHelperProtocol.swift; path = BD/DataHelperProtocol.swift; sourceTree = "<group>"; };
 		B5BB3BA11C9A456B007A7195 /* BeaconDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeaconDataHelper.swift; path = BD/BeaconDataHelper.swift; sourceTree = "<group>"; };
 		B5BB3BA21C9A456B007A7195 /* NotificationsDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationsDataHelper.swift; path = BD/NotificationsDataHelper.swift; sourceTree = "<group>"; };
@@ -132,7 +130,6 @@
 		B5BB3B7C1C9A4254007A7195 /* Groups */ = {
 			isa = PBXGroup;
 			children = (
-				B5BB3B9E1C9A4534007A7195 /* MainGroupsTableViewCell.swift */,
 				B5BB3B961C9A4510007A7195 /* AddGroupViewController.swift */,
 				B5BB3B971C9A4510007A7195 /* BeaconTableViewCell.swift */,
 				B5BB3B981C9A4510007A7195 /* GroupsStoryboard.storyboard */,
@@ -146,7 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				B5BB3B8E1C9A4468007A7195 /* BeaconRastreatorTableViewCell.swift */,
-				B5BB3B8F1C9A4468007A7195 /* ListBeaconsRastreatorViewController.swift */,
 				B5BB3B901C9A4468007A7195 /* MapBeaconsRastreatorViewController.swift */,
 				B5BB3B911C9A4468007A7195 /* Rastreator.storyboard */,
 				B5C827611CE0C98100B744B2 /* BeaconsListViewController.swift */,
@@ -159,6 +155,7 @@
 			children = (
 				B5BB3B861C9A4448007A7195 /* Main.storyboard */,
 				B5BB3B881C9A4448007A7195 /* MainViewController.swift */,
+				6345C2C91D023964007E0B44 /* MainGroupsTableViewCell.swift */,
 				B5BB3B891C9A4448007A7195 /* MenuViewController.swift */,
 			);
 			name = Main;
@@ -330,7 +327,6 @@
 			files = (
 				B5C827621CE0C98100B744B2 /* BeaconsListViewController.swift in Sources */,
 				B5BB3BA51C9A456B007A7195 /* BeaconDataHelper.swift in Sources */,
-				B5BB3B9F1C9A4534007A7195 /* MainGroupsTableViewCell.swift in Sources */,
 				B5BB3BAB1C9A4652007A7195 /* Beacon.swift in Sources */,
 				B5BB3BB61C9A5553007A7195 /* AddBeaconViewController.swift in Sources */,
 				B5BB3B941C9A4468007A7195 /* MapBeaconsRastreatorViewController.swift in Sources */,
@@ -341,10 +337,10 @@
 				B5BB3BA41C9A456B007A7195 /* DataHelperProtocol.swift in Sources */,
 				B5BB3B9D1C9A4510007A7195 /* GroupViewController.swift in Sources */,
 				B5BB3BAE1C9A4CC0007A7195 /* BeaconGroup.swift in Sources */,
-				B5BB3B931C9A4468007A7195 /* ListBeaconsRastreatorViewController.swift in Sources */,
 				B5BB3B8D1C9A4448007A7195 /* MenuViewController.swift in Sources */,
 				B5BB3BB21C9A4DB8007A7195 /* BeaconGroupDataHelper.swift in Sources */,
 				B5BB3B9B1C9A4510007A7195 /* BeaconTableViewCell.swift in Sources */,
+				6345C2CA1D023964007E0B44 /* MainGroupsTableViewCell.swift in Sources */,
 				B5BB3BA71C9A456B007A7195 /* SQLiteDataStore.swift in Sources */,
 				B5BB3B5C1C9A2B3A007A7195 /* AppDelegate.swift in Sources */,
 				B5BB3B921C9A4468007A7195 /* BeaconRastreatorTableViewCell.swift in Sources */,

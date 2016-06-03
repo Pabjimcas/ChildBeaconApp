@@ -1,9 +1,8 @@
 //
-//  MapBeaconsRastreatorViewController.swift
-//  ChildBeaconProject
-//
-//  Created by mikel balduciel diaz on 17/3/16.
-//  Copyright © 2016 mikel balduciel diaz. All rights reserved.
+//  KidBeacon
+//  Creado por Mikel Balduciel Diaz, Eduardo González de la Huebra Sánchez y David Jiménez Guinaldo en 2016
+//  para el Club Universitario de Innovación de la Universidad Pontificia de Salamanca.
+//  Copyright © 2016. Todos los derecho reservados.
 //
 
 import UIKit
@@ -19,7 +18,7 @@ class MapBeaconsRastreatorViewController: UIViewController,CLLocationManagerDele
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
-        // var location = CLLocation(latitude: 40.95 as CLLocationDegrees, longitude: -5.68 as CLLocationDegrees)
+
         
     }
     let regionRadius: CLLocationDistance = 50
@@ -31,19 +30,19 @@ class MapBeaconsRastreatorViewController: UIViewController,CLLocationManagerDele
     
     func addRadiusCircle(location: CLLocation){
         self.mapView.delegate = self
-        var circle = MKCircle(centerCoordinate: location.coordinate, radius: 50 as CLLocationDistance)
+        let circle = MKCircle(centerCoordinate: location.coordinate, radius: 50 as CLLocationDistance)
         self.mapView.addOverlay(circle)
     }
     
-    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
+    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
         if overlay is MKCircle {
-            var circle = MKCircleRenderer(overlay: overlay)
+            let circle = MKCircleRenderer(overlay: overlay)
             circle.strokeColor = UIColor.redColor()
             circle.fillColor = UIColor(red: 255, green: 0, blue: 0, alpha: 0.1)
             circle.lineWidth = 1
             return circle
         } else {
-            return nil
+            return MKCircleRenderer()
         }
     }
     //MARK - Location Manager
@@ -59,11 +58,8 @@ class MapBeaconsRastreatorViewController: UIViewController,CLLocationManagerDele
             switch status{
                 
             case .AuthorizedWhenInUse:
-                
-                //let center = CLLocationCoordinate2D(latitude: manager.location!.coordinate.latitude, longitude: manager.location!.coordinate.longitude)
-                //let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-                var location = CLLocation(latitude: manager.location!.coordinate.latitude as CLLocationDegrees, longitude: manager.location!.coordinate.longitude as CLLocationDegrees)
-                //mapView.setRegion(region, animated: true)
+        
+                let location = CLLocation(latitude: manager.location!.coordinate.latitude as CLLocationDegrees, longitude: manager.location!.coordinate.longitude as CLLocationDegrees)
                 centerMapOnLocation(location)
                 addRadiusCircle(location)
                 manager.startUpdatingLocation()

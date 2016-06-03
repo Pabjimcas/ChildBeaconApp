@@ -9,7 +9,7 @@
 import Foundation
 
 protocol DataHelperProtocol {
-    typealias T
+    associatedtype T
     static func createTable() throws -> Void
    static func insert(item: T) throws -> Int64
     static func delete(item: T) throws -> Void

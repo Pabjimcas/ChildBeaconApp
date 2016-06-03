@@ -11,16 +11,9 @@ import UIKit
 class MenuViewController: UIViewController {
     var groupId : Int64!
     var groupUUID : String!
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "groupVCSegue" {
             let destination = segue.destinationViewController as! GroupViewController

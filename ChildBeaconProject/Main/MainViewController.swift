@@ -1,9 +1,8 @@
 //
-//  ViewController.swift
-//  ChildBeaconProject
-//
-//  Created by mikel balduciel diaz on 17/3/16.
-//  Copyright © 2016 mikel balduciel diaz. All rights reserved.
+//  KidBeacon
+//  Creado por Mikel Balduciel Diaz, Eduardo González de la Huebra Sánchez y David Jiménez Guinaldo en 2016
+//  para el Club Universitario de Innovación de la Universidad Pontificia de Salamanca.
+//  Copyright © 2016. Todos los derecho reservados.
 //
 
 import UIKit
@@ -67,9 +66,6 @@ class MainViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("GCell") as! MainGroupsTableViewCell
-       // let group:GroupInfo = marrGroupData.objectAtIndex(indexPath.row) as! GroupInfo
-        //cell.btnGroup.setTitle(group.Name, forState: .Normal)
-        //cell.btnGroup.setTitle("\(group.Name)", forState: .Normal)
         
         let row = indexPath.row
         cell.nameLabel.text = datosBD[row].name
@@ -80,10 +76,7 @@ class MainViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         self.datoSeleccionadoUUID = datosBD[indexPath.row].UUID
         print("dato: \(self.datoSeleccionado)")
         self.performSegueWithIdentifier("menuSegue", sender: self)
-        
-        /*let externalStoryboard = UIStoryboard(name: "GroupsStoryboard", bundle: nil)
-        let shoppingListInstance = externalStoryboard.instantiateViewControllerWithIdentifier("shoppingListID") as? ShoopingListViewController
-        self.navigationController?.pushViewController(shoppingListInstance!, animated: true)*/
+
 
     }
     

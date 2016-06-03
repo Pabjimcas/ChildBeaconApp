@@ -1,9 +1,8 @@
 //
-//  Ingredient.swift
-//  iosAPP
-//
-//  Created by mikel balduciel diaz on 17/2/16.
-//  Copyright © 2016 mikel balduciel diaz. All rights reserved.
+//  KidBeacon
+//  Creado por Mikel Balduciel Diaz, Eduardo González de la Huebra Sánchez y David Jiménez Guinaldo en 2016
+//  para el Club Universitario de Innovación de la Universidad Pontificia de Salamanca.
+//  Copyright © 2016. Todos los derecho reservados.
 //
 
 import Foundation
