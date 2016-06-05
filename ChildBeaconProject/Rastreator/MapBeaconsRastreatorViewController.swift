@@ -57,7 +57,7 @@ class MapBeaconsRastreatorViewController: UIViewController,CLLocationManagerDele
             
             switch status{
                 
-            case .AuthorizedWhenInUse:
+            case .AuthorizedAlways:
         
                 let location = CLLocation(latitude: manager.location!.coordinate.latitude as CLLocationDegrees, longitude: manager.location!.coordinate.longitude as CLLocationDegrees)
                 centerMapOnLocation(location)
